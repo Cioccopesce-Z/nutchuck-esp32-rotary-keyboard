@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "author": "kosaktsa",
+  "pins": [
+    "VCC",
+    "GND",
+    "IN",
+    "OUT"
+  ],
+  "controls": [
+
+    
+  ]
+}

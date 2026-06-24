@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-xiao-esp32-c3", "id": "esp", "top": 38.97, "left": 13.78, "attrs": {} },
+    { "type": "wokwi-junction", "id": "j1", "top": 148.8, "left": 24, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": -163.8,
+      "left": -301.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -32.2,
+      "left": -115.2,
+      "attrs": { "color": "green", "xray": "1", "key": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -157,
+      "left": -57.6,
+      "attrs": { "color": "green", "xray": "1", "key": "2" }
+    },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": -101.78, "left": -170.48, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:3V3", "joystick1:VCC", "red", [ "h19.82", "v115.2", "h-364.8", "v-28.8" ] ],
+    [ "esp:GND", "joystick1:GND", "black", [ "h29.42", "v134.4", "h-316.8" ] ],
+    [ "joystick1:HORZ", "esp:D0", "green", [ "v0" ] ],
+    [ "joystick1:VERT", "esp:D1", "green", [ "v0" ] ],
+    [ "btn1:2.r", "esp:D6", "green", [ "h9.8", "v240.2" ] ],
+    [ "esp:D7", "btn2:2.r", "green", [ "v0", "h58.22", "v-220.8" ] ],
+    [ "esp:GND", "btn1:1.l", "black", [ "h29.42", "v-105.6", "h-230.4" ] ],
+    [ "esp:GND", "btn2:1.l", "black", [ "h29.42", "v-163.2", "h-172.8", "v-48" ] ],
+    [ "esp:3V3", "imu1:VCC", "red", [ "h10.22", "v-172.8" ] ],
+    [ "esp:GND", "imu1:GND", "black", [ "h29.42", "v-163.2" ] ],
+    [ "esp:D4", "imu1:SDA", "green", [ "h-57.6", "v-201.6", "h-86.4" ] ],
+    [ "imu1:SCL", "esp:D5", "green", [ "v-19.2", "h115.28" ] ]
+  ],
+  "dependencies": {}
+}
